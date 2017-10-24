@@ -1,5 +1,5 @@
 #! usr/bin/env python3
-# -*-encoding-*-:utf-8
+# -*-coding-*-:utf-8
 import requests
 import json
 import time
@@ -16,7 +16,7 @@ headers = {"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q
            }
 hash_value = json.dumps({"value":input("Input Your Windows Hash:")})
 start_time = time.time()
-hash_msg = requests.post(url=url,data=hash_value,headers=headers).content
+hash_msg = requests.post(url=url,data=hash_value,headers=headers).content.decode('utf-8')
 end_time = time.time()
 hash_password = json.loads(hash_msg)
 #print("正在破解密码中，请稍等.....")
